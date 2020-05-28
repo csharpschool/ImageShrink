@@ -31,3 +31,7 @@ In the Apple macOS operating system, .DS_Store is a file that stores custom attr
 node_modules
 .DS_Store
 release-builds
+
+/* CSS & JS */
+Font Awesome: https://fontawesome.com/download
+Bootstrap 4.5: https://getbootstrap.com/docs/4.5/getting-started/download/
