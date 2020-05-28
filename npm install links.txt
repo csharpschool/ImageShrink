@@ -1,0 +1,33 @@
+/* Project setup */
+npm init
+
+/* Development */
+npm install -D electron
+npm install -D electron-packager
+npm install -D nodemon
+
+/* Production */
+npm install imagemin imagemin-mozjpeg imagemin-pngquant
+npm install slash
+npm install electron-log
+ -- OR --
+npm install imagemin
+npm install imagemin-mozjpeg
+npm install imagemin-pngquant
+npm install slash
+npm install electron-log
+
+https://www.npmjs.com/package/electron
+https://www.npmjs.com/package/nodemon
+https://www.npmjs.com/package/electron-packager
+https://www.npmjs.com/package/imagemin
+https://www.npmjs.com/package/imagemin-mozjpeg
+https://www.npmjs.com/package/imagemin-pngquant
+https://www.npmjs.com/package/slash
+https://www.npmjs.com/package/electron-log
+
+/* gitignore */
+In the Apple macOS operating system, .DS_Store is a file that stores custom attributes of its containing folder, such as the position of icons or the choice of a background image.
+node_modules
+.DS_Store
+release-builds
