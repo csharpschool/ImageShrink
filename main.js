@@ -1,7 +1,7 @@
 const { app, BrowserWindow } = require('electron');
 
 // Set and check environment
-process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = 'development'; // production
 const isDev = process.env.NODE_ENV !== 'production';
 const isMac = process.platform === 'darwin';
 
@@ -40,3 +40,5 @@ app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0)
         createMainWindow();
 });
+
+app.allowRendererProcessReuse = true;
