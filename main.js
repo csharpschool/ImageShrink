@@ -9,25 +9,12 @@ const isMac = process.platform === 'darwin';
 let mainWindow;
 
 // Create Window
-createMainWindow = () => {
-    mainWindow = new BrowserWindow({
-        title: 'ImageShrink',
-        width: isDev ? 800 : 500,
-        height: 600,
-        icon: `${__dirname}/assets/icons/Icon_128x128.png`,
-        resizable: isDev ? true : false,
-        backgroundColor: 'white',
-        webPreferences: { nodeIntegration: true }
-    });
+const { createMainWindow } = require('./app/modules/mainWindow');
 
-    if (isDev) mainWindow.webContents.openDevTools();
-
-    mainWindow.loadFile('./app/index.html');
-}
 
 // Start Application
 app.on('ready', () => {
-    createMainWindow();
+    mainWindow = createMainWindow(isDev);
 
     mainWindow.on('close', () => (mainWindow = null));
 });
