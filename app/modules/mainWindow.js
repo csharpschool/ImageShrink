@@ -4,8 +4,8 @@ createMainWindow = (isDev) => {
     
     mainWindow = new BrowserWindow({
         title: 'ImageShrink',
-        width: isDev ? 800 : 500,
-        height: 600,
+        width: isDev ? 800 : 400,
+        height: 530,
         icon: `./assets/icons/Icon_128x128.png`,
         resizable: isDev ? true : false,
         backgroundColor: 'white',

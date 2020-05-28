@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,40 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>ImageShrink</title>
 </head>
+
 <body>
-    <h1>sdfg</h1>
-    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <section>
+        <div id="main-output" class="d-flex flex-column align-items-center m-5">
+            <!-- Logo -->
+            <div class="d-flex flex-row align-items-center mb-2">
+                <i class="far fa-image mr-2 display-4"></i>
+                <div class=" display-5">ImageShrink</div>
+            </div>
+
+            <!-- File Selection -->
+            <form id="image-form" class=" w-100">
+                <div class="d-flex flex-column align-items-center">
+                    <div class=" mb-2">Choose an image to resize</div>
+                    <button class="btn btn-primary text-uppercase rounded-0 btn-block mt-2">Browse</button>
+                    <p id="file-path" class="text-muted mt-2">No file selected</p>
+
+                    <div class="font-italic">Lower value = smaller file size</div>
+                    <input id="slider" type="range" min="0" max="100" class="form-control-range" />
+                    <button type="submit"
+                        class="btn btn-secondary text-uppercase rounded-0 btn-block mt-4">Resize</button>
+
+                    <p id="output-path" class="text-muted mt-2 mb-0">Output path</p>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Completed message -->
+    <div class="alert alert-success m-0 rounded-0 text-center">
+        Image resized to <strong id="percentage">50</strong>% quality
+    </div>
+    
 </body>
+
 </html>
