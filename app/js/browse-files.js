@@ -5,17 +5,15 @@ const os = require('os');
 /* Electron Renderer */
 const { ipcRenderer } = require('electron');
 
-
 // Form Elements
 const image = document.querySelector('#image');
 const imageName = document.querySelector('#image-name');
 const form = document.getElementById('image-form')
 const slider = document.getElementById('slider')
 
-image.addEventListener('change', (e) => {
-    imageName.innerText = image.files[0].name;
-    console.log('updateImagePath', image.files[0]);
-});
+image.addEventListener('change', (e) => 
+    imageName.innerText = image.files[0].name
+);
 
 
 document.getElementById('alert').innerHTML = path.join(

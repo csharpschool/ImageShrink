@@ -5,7 +5,7 @@ const os = require('os');
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 
 // Set and check environment
-process.env.NODE_ENV = 'development'; // development | production
+process.env.NODE_ENV = 'production'; // development | production
 const isDev = process.env.NODE_ENV !== 'production';
 const isMac = process.platform === 'darwin';
 
