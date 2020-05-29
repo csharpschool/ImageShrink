@@ -13,9 +13,9 @@
 
 <body>
     <section>
-        <div id="main-output" class="d-flex flex-column align-items-center m-5">
+        <div id="main-output" class="d-flex flex-column align-items-center mx-5 mb-3 mt-3">
             <!-- Logo -->
-            <div class="d-flex flex-row align-items-center mb-2">
+            <div class="d-flex flex-row align-items-center mb-4">
                 <i class="far fa-image mr-2 display-4"></i>
                 <div class=" display-5">ImageShrink</div>
             </div>
@@ -23,16 +23,15 @@
             <!-- File Selection -->
             <form id="image-form" class=" w-100">
                 <div class="d-flex flex-column align-items-center">
-                    <div class=" mb-2">Choose an image to resize</div>
-                    <button class="btn btn-primary text-uppercase rounded-0 btn-block mt-2">Browse</button>
-                    <p id="file-path" class="text-muted mt-2">No file selected</p>
+                    <div class="custom-file mb-4">
+                        <input id="image" type="file" class="custom-file-input rounded-0">
+                        <label id="image-name" class="custom-file-label rounded-0 border-primary" for="image">Click to choose an image to resize</label>
+                    </div>
 
                     <div class="font-italic">Lower value = smaller file size</div>
-                    <input id="slider" type="range" min="0" max="100" class="form-control-range" />
+                    <input id="slider" type="range" min="0" max="100" class="form-control-range mb-2" />
                     <button type="submit"
                         class="btn btn-secondary text-uppercase rounded-0 btn-block mt-4">Resize</button>
-
-                    <p id="output-path" class="text-muted mt-2 mb-0">Output path</p>
                 </div>
             </form>
 
@@ -40,10 +39,11 @@
     </section>
 
     <!-- Completed message -->
-    <div class="alert alert-success m-0 rounded-0 text-center">
-        Image resized to <strong id="percentage">50</strong>% quality
+    <div id="alert" class="alert alert-dark fixed-bottom m-0 rounded-0 text-center">
+        <!-- Image resized to <strong id="percentage">50</strong>% quality -->
     </div>
-    
+
+    <script src="js/browse-files.js"></script>
 </body>
 
 </html>
