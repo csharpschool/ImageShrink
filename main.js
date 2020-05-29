@@ -1,4 +1,8 @@
-const { app, BrowserWindow, Menu } = require('electron');
+/* Node modules */
+const path = require('path');
+const os = require('os');
+
+const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 
 // Set and check environment
 process.env.NODE_ENV = 'development'; // development | production
@@ -14,6 +18,8 @@ const { createMainWindow } = require('./app/modules/mainWindow');
 // Create Menu and About Window
 const { createMenu } = require('./app/modules/menu');
 
+// Compress Image
+const { shrinkImage } = require('./app/modules/shrink-image');
 
 // Start Application
 app.on('ready', () => {
@@ -37,3 +43,10 @@ app.on('activate', () => {
 });
 
 app.allowRendererProcessReuse = true;
+
+// This main event calls the function that shrinks the image
+// Gets options from the ipcRenderer.send call.
+ipcMain.on('image:minimize', (e, options) => {
+    options.dest = path.join(os.homedir(), 'imageshrink');
+    shrinkImage(options);
+}); 
